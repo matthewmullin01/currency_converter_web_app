@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     // Get all currencies ratios (so sw can cache them)
     this.currencies.forEach(cur1 => {
       this.currencies.forEach(cur2 => {
-        fetch(`http://free.currencyconverterapi.com/api/v5/convert?q=${cur1}_${cur2}&compact=ultra`);
+        fetch(`https://free.currencyconverterapi.com/api/v5/convert?q=${cur1}_${cur2}&compact=ultra`);
       });
     });
   }
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   async convert() {
     try {
       const conversionObj = await (await fetch(
-        `http://free.currencyconverterapi.com/api/v5/convert?q=${this.currency1}_${this.currency2}&compact=ultra`
+        `https://free.currencyconverterapi.com/api/v5/convert?q=${this.currency1}_${this.currency2}&compact=ultra`
       )).json();
       const ratio = Object.values(conversionObj)[0];
       this.amount2 = +ratio * +this.amount1;
