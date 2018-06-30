@@ -1,0 +1,70 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+
+    <div class="jumbotron" style="margin-top: 10%">
+      <h3 class="display-5">Currency Converter</h3>
+      <p class="lead">An offline first experience. Built with Angular 6 </p>
+      <hr class="my-4">
+
+      <div class="row">
+        <div class="form-group col-md-3">
+          <label class="col-form-label" for="amount">Amount</label>
+          <input type="text" class="form-control" placeholder="Amount" id="amount" [(ngModel)]="amount1">
+        </div>
+
+        <div class="form-group col-md-2">
+          <label class="col-form-label" for="currency">Currency</label>
+          <select class="form-control" id="currency" [(ngModel)]="currency1">
+            <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+          </select>
+        </div>
+        <div class="col-md-1 text-center" style="margin-top: 44px;">
+          ➞
+        </div>
+
+        <div class="form-group col-md-3">
+          <label class="col-form-label" for="amount2">Amount</label>
+          <input type="text" class="form-control" placeholder="" id="amount2" [(ngModel)]="amount2" disabled>
+        </div>
+
+        <div class="form-group col-md-2">
+          <label class="col-form-label" for="currency2">Currency</label>
+          <select class="form-control" id="currency2" [(ngModel)]="currency2">
+            <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+          </select>
+        </div>
+
+
+        <div class="col-md-12">
+          <button class="btn btn-primary btn-lg" (click)="convert()" role="button">Convert</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
